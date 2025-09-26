@@ -1,3 +1,5 @@
+import java.util.HashMap;
+
 public class EditoreaBiltegi {
 	private static EditoreaBiltegi nireEditoreaBiltegi = null;
 	private HashMap <String, Editorea> map;
@@ -9,7 +11,7 @@ public class EditoreaBiltegi {
 		if (nireEditoreaBiltegi == null) nireEditoreaBiltegi = new EditoreaBiltegi();
 	    return nireEditoreaBiltegi;
 	}
-	public int EditoreKopurua() {
+	public int editoreKopurua() {
 		return this.map.size();
 	}
 	
@@ -17,7 +19,9 @@ public class EditoreaBiltegi {
 		this.map.clear();
 	}
 	public void gehituEditorea(String izena, Editorea e) {
-	    this.map.put(izena, e);
+	    if (!map.containsKey(izena)) {
+	        map.put(izena, e);
+	    }
 	}
 	public Editorea bilatuEditorea(String izena) {
 	    return this.map.get(izena);
@@ -26,3 +30,4 @@ public class EditoreaBiltegi {
 	    return this.map.values();
 	}
 }
+
