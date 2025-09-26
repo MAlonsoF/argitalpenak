@@ -24,4 +24,6 @@ public class Editorea {
     public ArrayList<Argitalpena> getArgitalpenak() {
         return argitalpenak;
     }
+
+
 }
