@@ -1,3 +1,5 @@
+import java.util.ArrayList;
+
 public class Editorea {
 	private int id;
 	private String izena;
@@ -11,13 +13,14 @@ public class Editorea {
 	public String getIzena() { 
 		return izena; 
 	}
-
+	public int getId() {
+	    return id;
+	}
     public void gehituArgitalpena(Argitalpena a) {
         if (!argitalpenak.contains(a)) {
             argitalpenak.add(a);
         }
     }
-
     public ArrayList<Argitalpena> getArgitalpenak() {
         return argitalpenak;
     }
