@@ -26,7 +26,7 @@ public class Fitxategia {
 
     public void lineaEditoreak(String pEditoreak) throws FileNotFoundException, IOException {
         try (Scanner entrada = new Scanner(new FileReader(pFitxeroa))) {
-            HashMap <String> linea;
+
             while ((entrada.hasNext())&& (linea[i].equals())) {
                 linea = entrada.nextLine();
                 if ()
