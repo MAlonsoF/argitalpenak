@@ -1,3 +1,9 @@
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.IOException;
+import java.util.HashMap;
+import java.util.Scanner;
+
 public class Fitxategia {
 
     public Fitxategia() {
@@ -20,8 +26,8 @@ public class Fitxategia {
 
     public void lineaEditoreak(String pEditoreak) throws FileNotFoundException, IOException {
         try (Scanner entrada = new Scanner(new FileReader(pFitxeroa))) {
-            String linea;
-            while (entrada.hasNext()) {
+            HashMap <String> linea;
+            while ((entrada.hasNext())&& (linea[i].equals())) {
                 linea = entrada.nextLine();
                 if ()
                 String[] datuak = linea.split("\\s+#\\s+");
