@@ -24,20 +24,6 @@ public class Fitxategia {
         }
     }
 
-    public void lineaEditoreak(String pEditoreak) throws FileNotFoundException, IOException {
-        try (Scanner entrada = new Scanner(new FileReader(pFitxeroa))) {
-            HashMap <String> linea;
-            while ((entrada.hasNext())&& (linea[i].equals())) {
-                linea = entrada.nextLine();
-                if ()
-                String[] datuak = linea.split("\\s+#\\s+");
-                String id = datuak[0].trim();
-                String izena = datuak[1].trim();
-
-                Editorea e = new Editorea(id.hashCode(), izena); // o usar String id directamente
-                EditoreaBiltegi.getNireEditoreaBiltegi().gehituEditorea(id, e);
-        }
-    }
 
     // 2. ARGITALPENAK
     public void irakurriArgitalpenak(String pFitxeroa) throws FileNotFoundException, IOException {
