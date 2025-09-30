@@ -33,7 +33,7 @@ public class Argitalpena {
 		    if (!this.erlazionatuak.contains(a)) {
 		        this.erlazionatuak.add(a);
 		    }
-		}
+		} 
 
      public ArrayList<Argitalpena> getErlazionatuak() {
         return erlazionatuak;
