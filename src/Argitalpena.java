@@ -13,25 +13,29 @@ public class Argitalpena {
 		this.erlazionatuak = new ArrayList<Argitalpena>();
 	}
 	 public int getIdA() { 
-		return idA; 
+        return idA;
 	 }
+
 	 public String getIzenburua() { 
-	    return izenburua;
+        return izenburua;
 	 }
+
 	 public void gehituEgilea(Editorea e) {
 	        if (!this.egileak.contains(e)) {
 	            this.egileak.add(e);
 	        }
 	 }
 	 public ArrayList<Editorea> getEgileak() {
-	        return egileak;
+        return egileak;
 	 }
+
 	 public void gehituArgitalpena(Argitalpena a) {
 		    if (!this.erlazionatuak.contains(a)) {
 		        this.erlazionatuak.add(a);
 		    }
 		}
-	public ArrayList<Argitalpena> getErlazionatuak() {
-		    return erlazionatuak;
+
+     public ArrayList<Argitalpena> getErlazionatuak() {
+        return erlazionatuak;
 	}
 }

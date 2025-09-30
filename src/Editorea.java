@@ -13,9 +13,11 @@ public class Editorea {
     public String getIzena() {
         return izena;
     }
+
     public int getId() {
         return id;
     }
+
     public void gehituArgitalpena(Argitalpena a) {
         if (!argitalpenak.contains(a)) {
             argitalpenak.add(a);
