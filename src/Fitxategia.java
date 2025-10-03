@@ -68,13 +68,13 @@ public class Fitxategia {
                 linea = entrada.nextLine();
                 String[] datuak = linea.split("\\s+#\\s+");
                 String idArgitalpena = datuak[0].trim();
-                String idAgintapea = datuak[1].trim();
+                String idArgitalpena2 = datuak[1].trim();
 
                 Argitalpena a = ArgitalpenaBiltegi.getNireArgitalpenaBiltegi().bilatuArgitalpena(idArgitalpena);
-                Agintapea ag = AgintapeBiltegi.getNireAgintapeBiltegi().bilatuAgintapea(idAgintapea);
+                Argitalpena ag = ArgitalpenaBiltegi.getNireArgitalpenaBiltegi().bilatuArgitalpena(idArgitalpena2);
 
                 if (a != null && ag != null) {
-                    a.gehituAgintapea(ag);
+                    a.gehituArgitalpena(ag);
                     ag.gehituArgitalpena(a);
                 }
             }

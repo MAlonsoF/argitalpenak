@@ -1,3 +1,4 @@
+import java.util.ArrayList;
 import java.util.HashMap;
 
 
@@ -29,4 +30,11 @@ public class ArgitalpenaBiltegi {
         return map.get(izen);
     }
 
+
+    public ArrayList<String> aipamenak (Integer id){
+        if (map.containsKey(id)){
+          Argitalpena ar = map.get(id);
+          return ar.aipamenak();
+      }
+    }
 }

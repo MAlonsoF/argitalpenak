@@ -1,3 +1,4 @@
+import java.util.ArrayList;
 import java.util.HashMap;
 
 public class EditoreaBiltegi {
@@ -29,4 +30,13 @@ public class EditoreaBiltegi {
     public Iterable<Editorea> getEditoreak() {
         return this.map.values();
     }
+
+    public ArrayList<String> egileakOrdenatuta{
+        ArrayList<String> lista = new ArrayList<String>();
+        for (Editorea e : map.values()){
+            
+        }
+
+    }
+
 }
