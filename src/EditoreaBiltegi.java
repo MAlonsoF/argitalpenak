@@ -31,11 +31,13 @@ public class EditoreaBiltegi {
         return this.map.values();
     }
 
-    public ArrayList<String> egileakOrdenatuta{
+    public ArrayList<String> egileakOrdenatuta(){
         ArrayList<String> lista = new ArrayList<String>();
         for (Editorea e : map.values()){
-            
+        	lista.add(e.getIzena());   
         }
+        lista.sort(String::compareToIgnoreCase);
+        return lista;
 
     }
 
