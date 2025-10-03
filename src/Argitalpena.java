@@ -2,20 +2,20 @@ import java.util.ArrayList;
 import java.util.HashMap;
 
 public class Argitalpena {
-	private int idA;
+	private String idA;
 	private String izenburua;
 	//private ArrayList<Editorea> egileak; Deberia ser hashmap
-	private HashMap<Integer, Editorea> egileak;
+	private HashMap<String, Editorea> egileak;
 	//private ArrayList<Argitalpena> erlazionatuak;  Deberia de ser hashmap
-	private HashMap<Integer, Argitalpena> erlazionatuak;
+	private HashMap<String, Argitalpena> erlazionatuak;
 
-	public Argitalpena(int pIdA, String pIzenburua) {
+	public Argitalpena(String pIdA, String pIzenburua) {
 		this.idA = pIdA;
 		this.izenburua = pIzenburua;
-		this.egileak = new HashMap<Integer, Editorea>();
-		this.erlazionatuak = new HashMap<Integer, Argitalpena>();
+		this.egileak = new HashMap<String, Editorea>();
+		this.erlazionatuak = new HashMap<String, Argitalpena>();
 	}
-	 public int getIdA() { 
+	 public String getIdA() { 
         return idA;
 	 }
 
@@ -24,14 +24,14 @@ public class Argitalpena {
 	 }
 
 	 public void gehituEgilea(Editorea e) {
-	        if (!this.egileak.containsKey(e)) {
+	        if (!this.egileak.containsKey(e.getId())) {
 	            this.egileak.put(e.getId(), e);
 	        }
 	 }
 	 public ArrayList<String> egileak() {
 		 ArrayList<String> lista = new ArrayList<String>();
 		 for (Editorea a : egileak.values()) {
-			 Integer id = a.getId();
+			 String id = a.getId();
 			 String idS = id.toString();
 			 lista.add(idS);
 		 }
@@ -47,7 +47,7 @@ public class Argitalpena {
      public ArrayList<String> aipamenak() {
 		 ArrayList<String> lista = new ArrayList<String>();
 		 for (Argitalpena a : erlazionatuak.values()) {
-			 Integer id = a.idA;
+			 String id = a.idA;
 			 String idS = id.toString();
 			 lista.add(idS);
 		 }
