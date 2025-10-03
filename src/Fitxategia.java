@@ -1,7 +1,6 @@
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
-import java.util.HashMap;
 import java.util.Scanner;
 
 public class Fitxategia {
@@ -11,14 +10,13 @@ public class Fitxategia {
     }
     public void irakurriEditoreak(String pFitxeroa) throws FileNotFoundException, IOException {
         try (Scanner entrada = new Scanner(new FileReader(pFitxeroa))) {
-            String linea;
             while (entrada.hasNext()) {
-                linea = entrada.nextLine();
+                String linea = entrada.nextLine();
                 String[] datuak = linea.split("\\s+#\\s+");
-                String id = datuak[0].trim();
+                String id = datuak[0].trim();      // Ej: Q36423409
                 String izena = datuak[1].trim();
 
-                Editorea e = new Editorea(id.hashCode(), izena); // o usar String id directamente
+                Editorea e = new Editorea(id, izena);
                 EditoreaBiltegi.getNireEditoreaBiltegi().gehituEditorea(id, e);
             }
         }
@@ -28,14 +26,13 @@ public class Fitxategia {
     // 2. ARGITALPENAK
     public void irakurriArgitalpenak(String pFitxeroa) throws FileNotFoundException, IOException {
         try (Scanner entrada = new Scanner(new FileReader(pFitxeroa))) {
-            String linea;
             while (entrada.hasNext()) {
-                linea = entrada.nextLine();
+                String linea = entrada.nextLine();
                 String[] datuak = linea.split("\\s+#\\s+");
-                String id = datuak[0].trim();
+                String id = datuak[0].trim();          // Ej: Q33205611
                 String izenburua = datuak[1].trim();
 
-                Argitalpena a = new Argitalpena(id.hashCode(), izenburua);
+                Argitalpena a = new Argitalpena(id, izenburua);
                 ArgitalpenaBiltegi.getNireArgitalpenaBiltegi().gehituArgitalpena(id, a);
             }
         }
