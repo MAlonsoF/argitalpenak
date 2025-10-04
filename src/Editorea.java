@@ -34,4 +34,7 @@ public class Editorea {
         }
         return lista;
     }
+    public Iterable<Argitalpena> getArgitalpenakObjektuak() {
+        return argitalpenak.values();
+    }
 }
