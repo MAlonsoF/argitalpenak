@@ -40,5 +40,14 @@ public class EditoreaBiltegi {
         return lista;
 
     }
+    public void ezabatuEditorea(String id) {
+        Editorea e = map.remove(id);
+        if (e != null) {
+            // Eliminar al editor de todas sus publicaciones
+            for (Argitalpena a : e.getArgitalpenakObjektuak()) {
+                a.kenduEgilea(id);
+            }
+        }
+    }
 
 }
