@@ -1,3 +1,4 @@
+import java.util.ArrayList;
 import java.util.HashMap;
 
 
@@ -28,5 +29,31 @@ public class ArgitalpenaBiltegi {
 	public Argitalpena bilatuArgitalpena(String izen) {
 	    return map.get(izen);
 	}
-	
+	public void ezabatuArgitalpena(String id) {
+	    map.remove(id);
+	}
+	public ArrayList<String> argitalpenakOrdenatuta() {
+	    ArrayList<String> lista = new ArrayList<>();
+	    for (Argitalpena a : map.values()) {
+	        lista.add(a.getIzenburua());
+	    }
+
+	    // Algoritmo de ordenación propio (ej: burbuja)
+	    for (int i = 0; i < lista.size()-1; i++) {
+	        for (int j = 0; j < lista.size()-i-1; j++) {
+	            if (lista.get(j).compareToIgnoreCase(lista.get(j+1)) > 0) {
+	                // intercambiar
+	                String tmp = lista.get(j);
+	                lista.set(j, lista.get(j+1));
+	                lista.set(j+1, tmp);
+	            }
+	        }
+	    }
+
+	    return lista;
+	}
+	public Iterable<Argitalpena> getArgitalpenak() {
+	    return map.values();
+	}
 }
+
