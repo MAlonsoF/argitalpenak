@@ -53,6 +53,9 @@ public class Argitalpena {
 		 }
 		 return lista;
 	}
+    public void kenduEgilea(String idEgile) {
+    	 egileak.remove(idEgile);
+    }
 
 
 }
