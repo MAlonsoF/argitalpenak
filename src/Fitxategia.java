@@ -1,6 +1,8 @@
 import java.io.FileNotFoundException;
 import java.io.FileReader;
+import java.io.FileWriter;
 import java.io.IOException;
+import java.io.PrintWriter;
 import java.util.Scanner;
 
 public class Fitxategia {
@@ -77,4 +79,20 @@ public class Fitxategia {
             }
         }
     }
+    public void gordeEditoreak(String fitxeroa) throws IOException {
+        try (PrintWriter pw = new PrintWriter(new FileWriter(fitxeroa))) {
+            for (Editorea e : EditoreaBiltegi.getNireEditoreaBiltegi().getEditoreak()) {
+                pw.println(e.getId() + " # " + e.getIzena());
+            }
+        }
+    }
+
+    public void gordeArgitalpenak(String fitxeroa) throws IOException {
+        try (PrintWriter pw = new PrintWriter(new FileWriter(fitxeroa))) {
+            for (Argitalpena a : ArgitalpenaBiltegi.getNireArgitalpenaBiltegi().getArgitalpenak()) {
+                pw.println(a.getIdA() + " # " + a.getIzenburua());
+            }
+        }
+    }
+    
 }
