@@ -56,4 +56,3 @@ public class ArgitalpenaBiltegi {
 	    return map.values();
 	}
 }
-
