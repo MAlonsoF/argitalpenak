@@ -17,7 +17,7 @@ class EditoreaBiltegiTest {
         biltegia = EditoreaBiltegi.getNireEditoreaBiltegi();
         biltegia.erreseteatu(); // Biltegia garbitu aurretik
         editorea1 = new Editorea("E1", "Aitor");
-        editorea2 = new Editorea("E2", "Beñat");
+        editorea2 = new Editorea("E2", "BeÅ„at");
         arg1 = new Argitalpena("A1", "Artikulu 1");
         arg2 = new Argitalpena("A2", "Artikulu 2");
     }
@@ -95,14 +95,14 @@ class EditoreaBiltegiTest {
 
     @Test
     void testEgileakOrdenatuta() {
-        biltegia.gehituEditorea(editorea2); // Beñat
+        biltegia.gehituEditorea(editorea2); // BeÅ„at
         biltegia.gehituEditorea(editorea1); // Aitor
 
         ArrayList<String> ordenatua = biltegia.egileakOrdenatuta();
 
         assertEquals(2, ordenatua.size());
         assertEquals("Aitor", ordenatua.get(0), "Aitor lehenengo izan behar da alfabetikoki");
-        assertEquals("Beñat", ordenatua.get(1));
+        assertEquals("BeÅ„at", ordenatua.get(1));
     }
 
     @Test
