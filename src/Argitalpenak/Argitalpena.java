@@ -1,12 +1,11 @@
+package Argitalpenak;
 import java.util.ArrayList;
 import java.util.HashMap;
 
 public class Argitalpena {
 	private String idA;
 	private String izenburua;
-	//private ArrayList<Editorea> egileak; Deberia ser hashmap
 	private HashMap<String, Editorea> egileak;
-	//private ArrayList<Argitalpena> erlazionatuak;  Deberia de ser hashmap
 	private HashMap<String, Argitalpena> erlazionatuak;
 
 	public Argitalpena(String pIdA, String pIzenburua) {
@@ -20,7 +19,7 @@ public class Argitalpena {
 	 }
 
 	 public String getIzenburua() { 
-		return izenburua;
+        return izenburua;
 	 }
 
 	 public void gehituEgilea(Editorea e) {
@@ -54,7 +53,7 @@ public class Argitalpena {
 		 return lista;
 	}
     public void kenduEgilea(String idEgile) {
-    	 egileak.remove(idEgile);
+        egileak.remove(idEgile);
     }
 
 

@@ -1,3 +1,4 @@
+package Argitalpenak;
 import java.util.ArrayList;
 import java.util.HashMap;
 
@@ -7,19 +8,21 @@ public class ArgitalpenaBiltegi {
 	private HashMap <String, Argitalpena> map; 
 	
 	private ArgitalpenaBiltegi() {
-		this.map = new HashMap <String,Argitalpena>();
+        this.map = new HashMap <String,Argitalpena>();
 	}
+
 	public static ArgitalpenaBiltegi getNireArgitalpenaBiltegi() {
 		if (nireArgitalpenaBiltegi == null) nireArgitalpenaBiltegi = new ArgitalpenaBiltegi();
 	    return nireArgitalpenaBiltegi;
 	}
 	public int argitalpenKopurua() {
-		return this.map.size();
+        return this.map.size();
 	}
 	
 	public void erreseteatu() {
-		this.map.clear();
+        this.map.clear();
 	}
+
 	public void gehituArgitalpena(String izen, Argitalpena a) {
 	    if (!map.containsKey(izen)) {
 	        map.put(izen, a);
@@ -27,11 +30,13 @@ public class ArgitalpenaBiltegi {
 	}
 
 	public Argitalpena bilatuArgitalpena(String izen) {
-	    return map.get(izen);
+        return map.get(izen);
 	}
+
 	public void ezabatuArgitalpena(String id) {
-	    map.remove(id);
+        map.remove(id);
 	}
+
 	public ArrayList<String> argitalpenakOrdenatuta() {
 	    ArrayList<String> lista = new ArrayList<>();
 	    for (Argitalpena a : map.values()) {
@@ -53,6 +58,6 @@ public class ArgitalpenaBiltegi {
 	    return lista;
 	}
 	public Iterable<Argitalpena> getArgitalpenak() {
-	    return map.values();
+        return map.values();
 	}
 }
