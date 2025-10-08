@@ -1,6 +1,8 @@
 package Testak;
 
-import Argitalpenak;
+
+import Argitalpenak.Argitalpena;
+import Argitalpenak.Editorea;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
