@@ -1,3 +1,5 @@
+package Testak;
+
 import Argitalpenak.Argitalpena;
 import Argitalpenak.Editorea;
 import Argitalpenak.EditoreaBiltegi;
