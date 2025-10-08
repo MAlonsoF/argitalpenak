@@ -1,5 +1,7 @@
+package argitalpena;
 import java.io.FileNotFoundException;
 import java.io.IOException;
+import java.util.ArrayList;
 
 public class Main {
 
@@ -162,11 +164,17 @@ public class Main {
         }
 
         System.out.println();
-        // === ORDENATU ETA BISTARATU ARGITALPENAK ===
-        System.out.println("=== ARGITALPENAK ORDENATUTA ===");
-        for (String izen : ArgitalpenaBiltegi.getNireArgitalpenaBiltegi().argitalpenakOrdenatuta()) {
+   // === RGITALPENEN ZERRENDA ORDENATUTA ===
+        System.out.println("=== ARGITALPENEN ZERRENDA ORDENATUTA ===");
+        System.out.println("(Total: " + ArgitalpenaBiltegi.getNireArgitalpenaBiltegi().argitalpenKopurua() + " argitalpen)");
+
+        ArrayList<String> ordenatuta = ArgitalpenaBiltegi.getNireArgitalpenaBiltegi().argitalpenakOrdenatuta();
+        for (String izen : ordenatuta) {
             System.out.println(izen);
         }
+        
+
+        System.out.println();
 
         // === GORDE EGOERA FITXATEGIAN ===
         fitx.gordeEditoreak("Datos_DEA/authors-name-all.txt");
