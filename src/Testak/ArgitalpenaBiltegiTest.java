@@ -9,6 +9,7 @@ import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 
 import java.util.ArrayList;
+import java.util.NoSuchElementException;
 
 class ArgitalpenaBiltegiTest {
 
@@ -76,6 +77,14 @@ class ArgitalpenaBiltegiTest {
         biltegia.ezabatuArgitalpena("A1");
         assertEquals(0, biltegia.argitalpenKopurua());
         assertNull(biltegia.bilatuArgitalpena("A1"));
+        biltegia.ezabatuArgitalpena("A1");
+        assertThrows(NoSuchElementException.class, () -> {
+            biltegia.ezabatuArgitalpena("A1");
+        });
+        biltegia.ezabatuArgitalpena("");
+        assertThrows(NoSuchElementException.class, () -> {
+            biltegia.ezabatuArgitalpena("");
+        });
     }
 
     @Test

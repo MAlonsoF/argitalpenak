@@ -93,4 +93,10 @@ class ArgitalpenaTest {
         ArrayList<String> egileZerrenda = argitalpena.egileak();
         assertTrue(egileZerrenda.isEmpty());
     }
+
+    void testEgileZerrenda() {
+        ArrayList<String> egileZerrenda = argitalpena.egileak();
+        argitalpena.gehituEgilea(editorea1);
+        assertEquals(1, egileZerrenda.size());
+    }
 }

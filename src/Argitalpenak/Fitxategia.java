@@ -38,6 +38,8 @@ public class Fitxategia {
                 Argitalpena a = new Argitalpena(id, izenburua);
                 ArgitalpenaBiltegi.getNireArgitalpenaBiltegi().gehituArgitalpena(id, a);
             }
+        } catch (IzenaEzberdinaException e) {
+            throw new RuntimeException(e);
         }
     }
 

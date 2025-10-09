@@ -1,6 +1,7 @@
 package Argitalpenak;
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.NoSuchElementException;
 
 
 public class ArgitalpenaBiltegi {
@@ -37,8 +38,11 @@ public class ArgitalpenaBiltegi {
 	}
 
 	public void ezabatuArgitalpena(String id) {
-        map.remove(id);
-	}
+        if(!map.containsKey(id)) {
+            throw new NoSuchElementException("Ez dago id hori daukan argitalpenik");
+        }
+        else map.remove(id);
+    }
 
 	public ArrayList<String> argitalpenakOrdenatuta() {
 	    ArrayList<String> lista = new ArrayList<>();
