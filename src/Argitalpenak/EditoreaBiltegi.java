@@ -1,6 +1,7 @@
 package Argitalpenak;
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.NoSuchElementException;
 
 public class EditoreaBiltegi {
     private static EditoreaBiltegi nireEditoreaBiltegi = null;
@@ -39,7 +40,10 @@ public class EditoreaBiltegi {
 
     // Buscar por ID
     public Editorea bilatuEditorea(String id) {
-        return this.map.get(id);
+        if(!(map.containsKey(id))){
+            throw new NoSuchElementException("Id-a ez dago Biltegian");
+        }
+        else return map.get(id);
     }
 
     public Iterable<Editorea> getEditoreak() {

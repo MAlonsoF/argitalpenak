@@ -3,11 +3,13 @@ package Testak;
 import Argitalpenak.Argitalpena;
 import Argitalpenak.Editorea;
 import Argitalpenak.EditoreaBiltegi;
+import Argitalpenak.IzenaEzberdinaException;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 
 import java.util.ArrayList;
+import java.util.NoSuchElementException;
 
 class EditoreaBiltegiTest {
 
@@ -59,7 +61,16 @@ class EditoreaBiltegiTest {
     void testBilatuEditorea() {
         biltegia.gehituEditorea(editorea1);
         Editorea aurkitua = biltegia.bilatuEditorea("E1");
+        biltegia.bilatuEditorea("E4");
+        biltegia.bilatuEditorea("");
+
         assertEquals("Aitor", aurkitua.getIzena());
+        assertThrows(NoSuchElementException.class, () -> {
+            biltegia.bilatuEditorea("E4");
+        });
+        assertThrows(NoSuchElementException.class, () -> {
+            biltegia.bilatuEditorea("");
+        });
     }
 
     @Test

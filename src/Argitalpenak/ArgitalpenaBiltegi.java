@@ -23,9 +23,12 @@ public class ArgitalpenaBiltegi {
         this.map.clear();
 	}
 
-	public void gehituArgitalpena(String izen, Argitalpena a) {
+	public void gehituArgitalpena(String izen, Argitalpena a) throws IzenaEzberdinaException {
 	    if (!map.containsKey(izen)) {
-	        map.put(izen, a);
+            if (!(izen.equals(a.getIdA()))){
+                throw new IzenaEzberdinaException("Sartutako id-a ez da Argitalpenarena");
+            }
+	        else map.put(izen, a);
 	    }
 	}
 

@@ -3,6 +3,7 @@ package Testak;
 
 import Argitalpenak.Argitalpena;
 import Argitalpenak.ArgitalpenaBiltegi;
+import Argitalpenak.IzenaEzberdinaException;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
@@ -31,22 +32,29 @@ class ArgitalpenaBiltegiTest {
     }
 
     @Test
-    void testGehituArgitalpena() {
+    void testGehituArgitalpena() throws IzenaEzberdinaException {
         biltegia.gehituArgitalpena("A1", arg1);
-        biltegia.gehituArgitalpena("A2", arg2);
+        biltegia.gehituArgitalpena("A5", arg2);
+        biltegia.gehituArgitalpena( "", arg1);
 
         assertEquals(2, biltegia.argitalpenKopurua());
+        assertThrows(IzenaEzberdinaException.class, () -> {
+            biltegia.gehituArgitalpena("", arg1);
+        });
+        assertThrows(IzenaEzberdinaException.class, () -> {
+            biltegia.gehituArgitalpena("", arg1);
+        });
     }
 
     @Test
-    void testEzDituBikoiztuakGehitzen() {
+    void testEzDituBikoiztuakGehitzen() throws IzenaEzberdinaException {
         biltegia.gehituArgitalpena("A1", arg1);
         biltegia.gehituArgitalpena("A1", arg1); // Bikoiztua
         assertEquals(1, biltegia.argitalpenKopurua(), "Ez luke argitalpen bikoiztua gehitu behar");
     }
 
     @Test
-    void testBilatuArgitalpena() {
+    void testBilatuArgitalpena() throws IzenaEzberdinaException {
         biltegia.gehituArgitalpena("A1", arg1);
         Argitalpena aurkitua = biltegia.bilatuArgitalpena("A1");
 
@@ -61,7 +69,7 @@ class ArgitalpenaBiltegiTest {
     }
 
     @Test
-    void testEzabatuArgitalpena() {
+    void testEzabatuArgitalpena() throws IzenaEzberdinaException {
         biltegia.gehituArgitalpena("A1", arg1);
         assertEquals(1, biltegia.argitalpenKopurua());
 
@@ -71,7 +79,7 @@ class ArgitalpenaBiltegiTest {
     }
 
     @Test
-    void testArgitalpenakOrdenatuta() {
+    void testArgitalpenakOrdenatuta() throws IzenaEzberdinaException {
         biltegia.gehituArgitalpena("A1", arg1); // Argitalpena Bat
         biltegia.gehituArgitalpena("A2", arg2); // Beste Argitalpena
 
@@ -83,7 +91,7 @@ class ArgitalpenaBiltegiTest {
     }
 
     @Test
-    void testGetArgitalpenak() {
+    void testGetArgitalpenak() throws IzenaEzberdinaException {
         biltegia.gehituArgitalpena("A1", arg1);
         biltegia.gehituArgitalpena("A2", arg2);
 
@@ -96,7 +104,7 @@ class ArgitalpenaBiltegiTest {
     }
 
     @Test
-    void testErreseteatu() {
+    void testErreseteatu() throws IzenaEzberdinaException {
         biltegia.gehituArgitalpena("A1", arg1);
         biltegia.gehituArgitalpena("A2", arg2);
 
