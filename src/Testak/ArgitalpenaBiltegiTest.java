@@ -89,6 +89,11 @@ class ArgitalpenaBiltegiTest {
 
     @Test
     void testArgitalpenakOrdenatuta() throws IzenaEzberdinaException {
+       biltegia.argitalpenakOrdenatuta();
+        assertThrows(NullPointerException.class, () -> {
+            biltegia.argitalpenakOrdenatuta();
+        });
+
         biltegia.gehituArgitalpena("A1", arg1); // Argitalpena Bat
         biltegia.gehituArgitalpena("A2", arg2); // Beste Argitalpena
 
