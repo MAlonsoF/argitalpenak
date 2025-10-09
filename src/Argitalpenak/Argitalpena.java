@@ -44,7 +44,7 @@ public class Argitalpena {
 		else if (!this.erlazionatuak.containsKey(a.idA)) {
 		        this.erlazionatuak.put(a.idA, a);
 		    }
-		} 
+    }
 
      public ArrayList<String> aipamenak() {
 		 ArrayList<String> lista = new ArrayList<String>();
