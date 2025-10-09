@@ -75,10 +75,15 @@ public class EditoreaBiltegi {
 
     // Eliminar editor por id y limpiar sus referencias en publicaciones
     public void ezabatuEditorea(String id) {
-        Editorea e = map.remove(id);
-        if (e != null) {
-            for (Argitalpena a : e.getArgitalpenakObjektuak()) {
-                a.kenduEgilea(id);   // Argitalpena.kenduEgilea debe eliminar la clave id
+        if(!map.containsKey(id)) {
+            throw new NoSuchElementException("Ez dago id hori daukan argitalpenik");
+        }
+        else {
+            Editorea e = map.remove(id);
+            if (e != null) {
+                for (Argitalpena a : e.getArgitalpenakObjektuak()) {
+                    a.kenduEgilea(id);   // Argitalpena.kenduEgilea debe eliminar la clave id
+                }
             }
         }
     }

@@ -143,5 +143,14 @@ class EditoreaBiltegiTest {
         biltegia.gehituEditorea(editorea1);
         biltegia.ezabatuEditorea("E99"); // Ez dago
         assertEquals(1, biltegia.editoreKopurua());
+        assertNull(biltegia.bilatuEditorea("A1"));
+        biltegia.ezabatuEditorea("A1");
+        assertThrows(NoSuchElementException.class, () -> {
+            biltegia.ezabatuEditorea("A1");
+        });
+        biltegia.ezabatuEditorea("");
+        assertThrows(NoSuchElementException.class, () -> {
+            biltegia.ezabatuEditorea("");
+        });
     }
 }
