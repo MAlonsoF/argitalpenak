@@ -38,7 +38,10 @@ public class Argitalpena {
 	 }
 
 	 public void gehituArgitalpena(Argitalpena a) {
-		    if (!this.erlazionatuak.containsKey(a.idA)) {
+        if ((a.idA.equals(""))||(a.izenburua.equals(""))) {
+            throw new NullPointerException("Argitalpena nulua da");
+        }
+		else if (!this.erlazionatuak.containsKey(a.idA)) {
 		        this.erlazionatuak.put(a.idA, a);
 		    }
 		} 

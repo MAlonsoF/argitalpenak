@@ -8,6 +8,7 @@ import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 
 import java.util.ArrayList;
+import java.util.NoSuchElementException;
 
 class ArgitalpenaTest {
 
@@ -23,7 +24,7 @@ class ArgitalpenaTest {
         editorea1 = new Editorea("E1", "Editore Bat");
         editorea2 = new Editorea("E2", "Editore Bi");
         erlazionatua1 = new Argitalpena("A2", "Erlazionatutako Argitalpena 1");
-        erlazionatua2 = new Argitalpena("A3", "Erlazionatutako Argitalpena 2");
+        erlazionatua2 = new Argitalpena("" ,"" );
     }
 
     @Test
@@ -71,6 +72,11 @@ class ArgitalpenaTest {
 
         assertEquals(1, aipamenZerrenda.size());
         assertTrue(aipamenZerrenda.contains("A2"));
+
+        argitalpena.gehituArgitalpena(erlazionatua2);
+        assertThrows(NullPointerException.class, () -> {
+            argitalpena.gehituArgitalpena(erlazionatua2);
+        });
     }
 
     @Test
