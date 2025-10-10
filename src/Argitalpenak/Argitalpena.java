@@ -14,6 +14,7 @@ public class Argitalpena {
 		this.egileak = new HashMap<String, Editorea>();
 		this.erlazionatuak = new HashMap<String, Argitalpena>();
 	}
+	//Tu madre es puta
 	 public String getIdA() { 
         return idA;
 	 }
